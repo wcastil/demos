@@ -1,0 +1,4 @@
+src/
+node_modules/
+.password
+.DS_Store
