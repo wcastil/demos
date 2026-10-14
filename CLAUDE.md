@@ -118,5 +118,19 @@ curl -s https://wcastil.github.io/demos/<page>.html | grep -c "<known-plaintext-
 | File | URL |
 | --- | --- |
 | `strata-revenue-demo-may15.html` | https://wcastil.github.io/demos/strata-revenue-demo-may15.html |
+| `strata-update-oct14.html` | https://wcastil.github.io/demos/strata-update-oct14.html |
 
 Keep this table updated when adding or removing pages.
+
+## Design export page
+
+`strata-update-oct14.html` is generated from the local `Main.dc.html` design export with `build-design-page.mjs`. It resolves the static color properties and embeds all seven PNG screenshots before encryption. Original screenshots and page text must remain inside the encrypted output; do not publish the assets folder separately.
+
+To rebuild it, install the pinned CLI inside the task checkout, set `STATICRYPT_PASSWORD` in the environment, then run:
+
+```bash
+npm install --no-save --package-lock=false staticrypt@3.5.4
+node build-design-page.mjs /path/to/Main.dc.html strata-update-oct14.html
+```
+
+The custom template folds only the first character to lowercase before decryption. Use a build password whose first letter is lowercase. Password entry is required on every page load; this template does not read saved passwords or magic links. Keep the password out of tracked files. The generated plaintext lives in gitignored `src/`.

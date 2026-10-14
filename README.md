@@ -31,3 +31,17 @@ Edit `.password` (local), then re-run `./build.sh` to re-encrypt all pages with 
 Send them the URL. They see a password prompt, type the password, and the page renders.
 
 If you want a one-click "magic link" that auto-unlocks (so they don't have to type), staticrypt supports it via the `--share` flag — see staticrypt docs.
+
+## Design export page
+
+[Strata product update, October 14](https://wcastil.github.io/demos/strata-update-oct14.html) includes all seven screenshots inside the encrypted page. It requires password entry each time it loads and accepts either case for the password's first letter.
+
+To rebuild a static design export without publishing its original text or images:
+
+```bash
+npm install --no-save --package-lock=false staticrypt@3.5.4
+# Set STATICRYPT_PASSWORD in the environment, using a lowercase first letter.
+node build-design-page.mjs /path/to/Main.dc.html strata-update-oct14.html
+```
+
+The packager keeps the prepared plaintext in gitignored `src/`. Commit only the encrypted output, build helper, and password template; keep original assets local.
