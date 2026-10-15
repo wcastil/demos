@@ -36,6 +36,8 @@ If you want a one-click "magic link" that auto-unlocks (so they don't have to ty
 
 [Strata product update, October 14](https://wcastil.github.io/demos/strata-update-oct14.html) includes all seven screenshots inside the encrypted page. It requires password entry each time it loads and accepts either case for the password's first letter.
 
+[James Currier's copy](https://wcastil.github.io/demos/strata-update-james-currier.html) contains the same update with a separate password. Rebuild it with its own password and the output filename `strata-update-james-currier.html`.
+
 To rebuild a static design export without publishing its original text or images:
 
 ```bash

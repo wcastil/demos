@@ -119,6 +119,7 @@ curl -s https://wcastil.github.io/demos/<page>.html | grep -c "<known-plaintext-
 | --- | --- |
 | `strata-revenue-demo-may15.html` | https://wcastil.github.io/demos/strata-revenue-demo-may15.html |
 | `strata-update-oct14.html` | https://wcastil.github.io/demos/strata-update-oct14.html |
+| `strata-update-james-currier.html` | https://wcastil.github.io/demos/strata-update-james-currier.html |
 
 Keep this table updated when adding or removing pages.
 
@@ -134,3 +135,5 @@ node build-design-page.mjs /path/to/Main.dc.html strata-update-oct14.html
 ```
 
 The custom template folds only the first character to lowercase before decryption. Use a build password whose first letter is lowercase. Password entry is required on every page load; this template does not read saved passwords or magic links. Keep the password out of tracked files. The generated plaintext lives in gitignored `src/`.
+
+`strata-update-james-currier.html` uses the same source and template with its own password supplied through `STATICRYPT_PASSWORD`. Rebuild only that output with its recipient's password; do not re-encrypt the other pages. Its content and seven screenshots match the October 14 update.
